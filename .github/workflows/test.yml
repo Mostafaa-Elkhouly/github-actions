@@ -1,0 +1,22 @@
+name: test  # workflow name
+on: push #event - trigger 
+jobs:
+  test:
+    runs-on: ubuntu-latest #runner
+    steps:
+      - name: Get Code from GitHub Repo
+        uses: actions/checkout@v5
+
+      - name: Install Nodejs
+        uses: actions/setup-node@v6
+        with:
+            node-version: 22
+     
+      - name: get into project directory
+        run: cd 02_Starting_Project/
+
+      - name: Install Dependencies 
+        run: npm install #npm ci
+         
+      - name: Run test cases
+        run: npm test
