@@ -11,15 +11,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
             node-version: 22
-     
-      - name: get into project directory
-        run: cd 02_Starting_Project/
 
-      - name: print working directory - showing files
-        run: pwd;ls
-
-      - name: Install Dependencies 
-        run: npm install #npm ci
-         
-      - name: Run test cases
-        run: npm test
+      - name: Install dependencies 
+        run: |
+                cd 02_Starting_Project
+                npm install  #npm ci
+                npm test
