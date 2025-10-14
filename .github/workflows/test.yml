@@ -15,6 +15,9 @@ jobs:
       - name: get into project directory
         run: cd 02_Starting_Project/
 
+      - name: print working directory - showing files
+        run: pwd;ls
+
       - name: Install Dependencies 
         run: npm install #npm ci
          
