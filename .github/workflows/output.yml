@@ -4,6 +4,6 @@ jobs:
   info:
     runs-on: ubuntu-latest
     steps:
-        #Github  Expressions & Context objects 
+        #Github Actions Expressions & Context objects 
       - name: Output Github context
         run: echo "${{ toJson(github) }}"
