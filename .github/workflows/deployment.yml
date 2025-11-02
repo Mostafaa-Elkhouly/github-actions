@@ -33,7 +33,7 @@ jobs:
         run: |
                 cd 02_Starting_Project
                 npm ci
-                npm run
+                npm run build
 
       - name: Deploy to Production Server
         run: echo "Deploying to Production Server..."
