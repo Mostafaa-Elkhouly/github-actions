@@ -1,0 +1,19 @@
+name: test-workflow
+on: push #Event
+jobs:
+    test:
+        runs-on: ubuntu-latest #runner
+        steps:
+          - name: Get Code from GitHub Repo
+            uses: actions/checkout@v7
+
+          - name: Install NodeJS
+            uses: actions/setup-node@v3
+            with:
+                node-version: 22
+        
+          - name: Install dependencies
+            run: npm ci  #npm install
+
+          - name: Run Tests
+            run: npm test 
