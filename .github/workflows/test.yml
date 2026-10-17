@@ -1,5 +1,5 @@
 name: test-workflow
-on: push #Event
+on: workflow_dispatch #Event
 jobs:
     test:
         runs-on: ubuntu-latest #runner
