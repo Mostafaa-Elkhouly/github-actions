@@ -1,5 +1,10 @@
 name: Deployment Project
 on: [push, workflow_dispatch]  #Event
+
+# workflow-level permissions
+permissions:
+  contents: read
+
 jobs:
     test:
         runs-on: ubuntu-latest #runner
@@ -21,6 +26,13 @@ jobs:
     deploy:
         needs: test
         runs-on: ubuntu-latest #runner
+
+        # Deploy job permisssions
+        permissions:
+          contents: read
+          pages: write
+          id-token: write
+          
         steps:
           - name: Get Code from GitHub Repo
             uses: actions/checkout@v7
